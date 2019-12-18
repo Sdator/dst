@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>饿了</title>
+    <style>
+        table tbody {}
+    </style>
+    <link rel="stylesheet" href="mdui/css/mdui.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+
+
+    <script src="mdui/js/mdui.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+
+        <!-- 用户输入框 -->
+        <div class="mdui-container mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">你想查什么？</label>
+            <input class="mdui-textfield-input" type="text" v-model="searchTextA" />
+        </div>
+
+        <div class="mdui-progress">
+            <div class="mdui-progress-indeterminate" v-if="msg == 'Loading...'"></div>
+        </div>
+
+        <!-- 分界线 -->
+        <hr />
+
+
+        <!-- 表格 -->
+        <table class="mdui-table mdui-table-hoverable mdui-container-flui">
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th v-for="表头 in 表头食物属性">{{ 表头 }}</th>
+                </tr>
+            </thead>
+            <!-- 表格正文 -->
+            <tbody v-for="食物 in 食谱">
+                <tr>
+                    <td>{{ 食物.Name }} </td>
+                    <td>{{ 食物.Health }} </td>
+                    <td>{{ 食物.Hunger }} </td>
+                    <td>{{ 食物.Sanity }} </td>
+                    <td>{{ 食物.Perish }} </td>
+                    <td>{{ 食物.Cooktime }} </td>
+                    <td>{{ 食物.Priority }} </td>
+                </tr>
+            </tbody>
+            <!-- 表尾 -->
+            <tfoot>
+                <tr>
+                    <th colspan="4" class="mdui-text-center">
+                        商务合作 QQ:250740270 <kbd
+                            mdui-tooltip="{content: '不管在身在何处 我都会提醒自己 不要忘记自己活在现实中',position: 'right',delay: 1000}">Air</kbd>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script src="main.js" type="module"></script>
+
+    <script>
+    </script>
+</body>
+
+</html>

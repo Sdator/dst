@@ -1,0 +1,17 @@
+version: "2.1"
+
+services:
+  jh:
+    container_name: jh
+    image: nginx
+    ports:
+      - 8080:80
+    volumes:
+      - ${pwd}:/usr/share/nginx/html
+      - ${pwd}/nginx.conf:/etc/nginx/nginx.conf
+      # - ${pwd}/mysite.template:/etc/nginx/conf.d/mysite.template
+
+
+# ls /etc/nginx/conf.d
+# cp /etc/nginx/nginx.conf /usr/share/nginx/html/nginx.conf
+# cp /etc/nginx/conf.d/default.conf /usr/share/nginx/html/default.conf
