@@ -40,12 +40,13 @@
             <!-- 表头 -->
             <thead>
                 <tr>
-                    <th v-for="表头 in 表头食物属性">{{ 表头 }}</th>
+                    <th v-for="表头 in 表头食物属性" @click="cli(表头,true)">{{ 表头 }}</th>
                 </tr>
             </thead>
             <!-- 表格正文 -->
             <tbody v-for="食物 in 食谱">
                 <tr>
+                    <td>{{ num++ }} </td>
                     <td>{{ 食物.Name }} </td>
                     <td>{{ 食物.Health }} </td>
                     <td>{{ 食物.Hunger }} </td>
