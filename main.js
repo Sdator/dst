@@ -18,7 +18,7 @@ $(window).scroll(function () {
         // console.log(ty, sctop)
         thead.css({
             "transform": 'translateY(' + ty + 'px)',
-            "background-color": "#000",
+            "background-color": "#f00",
             "color": "#fff"
         })
         thead.addClass("mdui-color-blue mdui-text-color-theme-icon-disabled")
@@ -59,32 +59,34 @@ const app = new Vue({
             this.食谱 = this.格式化数据(json)
 
             console.log(this.食谱)
-
-            // for (const { Name, Health, Hunger, Sanity, Perish, Cooktime, Priority } of json.FoodRecipe.FoodRecipes) {
-            //     let item = Health + 100
-            //     // console.log(Health + 100)
-            //     setTimeout((排序, data) => {
-
-            //         排序.push(data)
-
-            //     }, item, this.排序, {
-            //         "名字": Name,
-            //         "生命": Health,
-            //         "饥饿": Hunger,
-            //         "精神": Sanity,
-            //         "保鲜": Perish,
-            //         "烹饪时间": Cooktime,
-            //         "优先度": Priority
-            //     })
-            // }
-            // 睡眠排序
-            // for (const 属性 of json.FoodRecipe.FoodRecipes) {
-            //     let item = 属性.Health + 100
-            //     setTimeout((食谱, data) => {
-            //         食谱.push(data)
-            //     }, item, this.食谱, 属性)
-            // }
             // console.log(this.食谱, [...this.食谱])
+            /*
+                        for (const { Name, Health, Hunger, Sanity, Perish, Cooktime, Priority } of json.FoodRecipe.FoodRecipes) {
+                            let item = Health + 100
+                            // console.log(Health + 100)
+                            setTimeout((排序, data) => {
+            
+                                排序.push(data)
+            
+                            }, item, this.排序, {
+                                "名字": Name,
+                                "生命": Health,
+                                "饥饿": Hunger,
+                                "精神": Sanity,
+                                "保鲜": Perish,
+                                "烹饪时间": Cooktime,
+                                "优先度": Priority
+                            })
+                        }
+                        睡眠排序
+                        for (const 属性 of json.FoodRecipe.FoodRecipes) {
+                            let item = 属性.Health + 100
+                            setTimeout((食谱, data) => {
+                                食谱.push(data)
+                            }, item, this.食谱, 属性)
+                        }
+            */
+
         }).catch(function (ex) {
             console.log('Parsing failed:', ex);
         });

@@ -6,7 +6,8 @@
             "type": "chrome",
             "request": "launch",
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}/wwwroot"
+            "webRoot": "${workspaceFolder}/wwwroot",
+            "runtimeExecutable":"E:/Apps/apps/googlechrome/current/chrome.exe"
         },
         {
             "name": "单文件",
