@@ -1,11 +1,7 @@
 var $$ = mdui.JQ;
 
 
-
-
-
 var thead_top = $('thead').offset().top;
-
 $(window).scroll(function () {
 
     var sctop = $(this).scrollTop();
@@ -57,8 +53,10 @@ const app = new Vue({
         }).then(json => {
 
             this.食谱 = this.格式化数据(json)
+        
 
-            console.log(this.食谱)
+
+                console.log(this.食谱)
             // console.log(this.食谱, [...this.食谱])
             /*
                         for (const { Name, Health, Hunger, Sanity, Perish, Cooktime, Priority } of json.FoodRecipe.FoodRecipes) {
@@ -102,7 +100,6 @@ const app = new Vue({
             const 其他 = json.FoodOthers.Foods
             const 食谱 = json.FoodRecipe.FoodRecipes
             const 菇类 = json.FoodVegetables.Foods
-
             return [...蛋类, ...果类, ...肉类, ...特殊, ...其他, ...食谱, ...菇类]
 
         },
@@ -117,6 +114,7 @@ const app = new Vue({
             this.num = 0
 
             const 对照表 = {
+                "序列": 0,
                 "名字": "Name",
                 "生命": "Health",
                 "饥饿": "Hunger",
@@ -126,16 +124,20 @@ const app = new Vue({
                 "优先度": "Priority"
             }
             const 名字 = 对照表[e]
+            let i = 0
 
             // 睡眠排序
             for (const 属性 of this.食谱) {
-                let item = model ? ~(属性[名字] - 100) : 属性[名字] + 100
-                console.log(item)
+
+                属性["序列"] = i++
+                let item = model ? ~(属性[名字] - 101) : 属性[名字] + 100
                 setTimeout((排序, data) => {
+                    // console.log(item)
                     排序.push(data)
                 }, item, this.排序, 属性)
             }
             this.食谱 = this.排序
+
             // console.log(this.排序)
 
         }
